@@ -24,14 +24,14 @@ class InventoryController with ChangeNotifier{
       inventoryUid: inventoryUid,
       barcodeNo: barcodeNumber.text,
       itemName: itemName.text,
-      itemType: ,
+      itemType: "",
       salePrice: salePrice.text,
       purchasePrice: purchasePrice.text,
       wholePrice: wholePrice.text,
       tax: tax.text,
       discount: discount.text,
       stock: stock.text,
-      supplierName: ,
+      supplierName: "",
     );
 
     FirebaseFirestore.instance.
