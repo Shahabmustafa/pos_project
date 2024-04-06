@@ -18,6 +18,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
             context: context,
             builder: (context){
               return AlertDialog(
+                scrollable: true,
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -106,6 +107,18 @@ class _InventoryScreenState extends State<InventoryScreen> {
                     ),
                   ],
                 ),
+                actions: [
+                  ElevatedButton(
+                    onPressed: (){},
+                    child: Text("Add Supplier"),
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
+                    child: Text("Cancel"),
+                  ),
+                ],
               );
             },
           );
