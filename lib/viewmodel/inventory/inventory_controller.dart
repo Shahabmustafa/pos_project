@@ -17,8 +17,8 @@ class InventoryController with ChangeNotifier{
   TextEditingController stock = TextEditingController();
 
 
-  addInventory(){
-    String inventoryUid = uuid.v4();
+  addInventory(BuildContext context){
+    String inventoryUid = uuid.v6();
 
     Inventory inventory = Inventory(
       inventoryUid: inventoryUid,
@@ -36,7 +36,17 @@ class InventoryController with ChangeNotifier{
 
     FirebaseFirestore.instance.
     collection("inventory").
-    doc(inventoryUid).set(inventory.toJson());
+    doc(inventoryUid).set(inventory.toJson()).then((value){
+      Navigator.pop(context);
+      barcodeNumber.clear();
+      itemName.clear();
+      salePrice.clear();
+      purchasePrice.clear();
+      wholePrice.clear();
+      tax.clear();
+      discount.clear();
+      stock.clear();
+    });
   }
 
 }

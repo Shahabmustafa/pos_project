@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sofi_shoes/res/responsive.dart';
 
 class CustomTableCell extends StatelessWidget {
   final String? text;
@@ -24,12 +23,7 @@ class CustomTableCell extends StatelessWidget {
           style: GoogleFonts.lora(
             color: textColor,
             fontWeight: fontWeight,
-            fontSize: Responsive.isDesktop(context)
-                ? 13 : Responsive.isTablet(context)
-                ? 11
-                : Responsive.isMobile(context)
-                ? 8
-                : 6,
+            fontSize: 14,
           ),
         ),
       ),
